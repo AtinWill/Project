@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            background: #0f3460;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        #submit:active{
+            transform: scale(1.1);
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            margin: 10px 6px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-sizing: border-box;
+        }
+
+        .Idform {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgb(0, 0,0.3);
+        }
+
+        #pesan {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form class="Idform">
+        <h2>Masukkan Kode Rahasia</h2>
+        <input type="password" id="password" required placeholder="Masukkan password">
+        <input type="submit" id="submit">
+    </form>
+
+    <p id="pesan"></p>
+
+    <script>
+        const inputpassword = document.getElementById('pasword');
+        const form = document.getElementById('Idform');
+        const submit = document.getElementById('submit');
+        const pesan = document.getElementById('pesan')
+
+        function cekpassword(event) {
+            if(event) {
+                event.preventDefault();
+            }
+
+            if (inputpassword.value === Sigma //Kode Rahasia yang anda inginkan// 
+            ){
+                window.location.href = ""; //link yang anda ingin taruh//
+            } else {
+                pesan.textContent = "password anda salah";
+                pesan.style.color = "red"
+            }
+        }
+
+        form.addEventListener('submit', cekpassword);
+
+        submit.addEventListener('click', function (event) {
+            event.preventDafault();
+            cekpassword(event);
+        });
+
+    </script>
+</body>
+</html>
